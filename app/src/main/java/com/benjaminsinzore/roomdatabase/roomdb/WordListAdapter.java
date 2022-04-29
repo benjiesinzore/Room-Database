@@ -20,19 +20,19 @@ public class WordListAdapter extends ListAdapter<Word, WordViewHolder> {
 
     @Override
     public void onBindViewHolder(WordViewHolder holder, int position) {
-        com.example.android.roomwordssample.Word current = getItem(position);
+        Word current = getItem(position);
         holder.bind(current.getWord());
     }
 
-    static class WordDiff extends DiffUtil.ItemCallback<Word> {
+    public static class WordDiff extends DiffUtil.ItemCallback<Word> {
 
         @Override
-        public boolean areItemsTheSame(@NonNull com.example.android.roomwordssample.Word oldItem, @NonNull com.example.android.roomwordssample.Word newItem) {
+        public boolean areItemsTheSame(@NonNull Word oldItem, @NonNull Word newItem) {
             return oldItem == newItem;
         }
 
         @Override
-        public boolean areContentsTheSame(@NonNull com.example.android.roomwordssample.Word oldItem, @NonNull com.example.android.roomwordssample.Word newItem) {
+        public boolean areContentsTheSame(@NonNull Word oldItem, @NonNull Word newItem) {
             return oldItem.getWord().equals(newItem.getWord());
         }
     }

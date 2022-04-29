@@ -10,22 +10,22 @@ import java.util.List;
 
 public class WordViewModel extends AndroidViewModel {
 
-    private com.example.android.roomwordssample.WordRepository mRepository;
+    private WordRepository mRepository;
 
 
-    private final LiveData<List<com.example.android.roomwordssample.Word>> mAllWords;
+    private final LiveData<List<Word>> mAllWords;
 
     public WordViewModel(Application application) {
         super(application);
-        mRepository = new com.example.android.roomwordssample.WordRepository(application);
+        mRepository = new WordRepository(application);
         mAllWords = mRepository.getAllWords();
     }
 
-    LiveData<List<com.example.android.roomwordssample.Word>> getAllWords() {
+    LiveData<List<Word>> getAllWords() {
         return mAllWords;
     }
 
-    void insert(com.example.android.roomwordssample.Word word) {
+    public void insert(Word word) {
         mRepository.insert(word);
     }
 }

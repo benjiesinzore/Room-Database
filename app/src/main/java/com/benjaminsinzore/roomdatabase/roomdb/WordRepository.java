@@ -10,7 +10,7 @@ import java.util.List;
 class WordRepository {
 
     private WordDao mWordDao;
-    private LiveData<List<com.example.android.roomwordssample.Word>> mAllWords;
+    private LiveData<List<Word>> mAllWords;
 
     WordRepository(Application application) {
         WordRoomDatabase db = WordRoomDatabase.getDatabase(application);
@@ -18,11 +18,11 @@ class WordRepository {
         mAllWords = mWordDao.getAlphabetizedWords();
     }
 
-    LiveData<List<com.example.android.roomwordssample.Word>> getAllWords() {
+    LiveData<List<Word>> getAllWords() {
         return mAllWords;
     }
 
-    void insert(com.example.android.roomwordssample.Word word) {
+    void insert(Word word) {
         WordRoomDatabase.databaseWriteExecutor.execute(() -> {
             mWordDao.insert(word);
         });

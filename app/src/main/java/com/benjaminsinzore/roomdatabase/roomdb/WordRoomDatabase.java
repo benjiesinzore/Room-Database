@@ -11,10 +11,10 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {com.example.android.roomwordssample.Word.class}, version = 1, exportSchema = false)
+@Database(entities = {Word.class}, version = 1, exportSchema = false)
 abstract class WordRoomDatabase extends RoomDatabase {
 
-    abstract com.example.android.roomwordssample.WordDao wordDao();
+    abstract WordDao wordDao();
 
     private static volatile WordRoomDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
@@ -43,12 +43,12 @@ abstract class WordRoomDatabase extends RoomDatabase {
 
             databaseWriteExecutor.execute(() -> {
 
-                com.example.android.roomwordssample.WordDao dao = INSTANCE.wordDao();
+                WordDao dao = INSTANCE.wordDao();
                 dao.deleteAll();
 
-                com.example.android.roomwordssample.Word word = new com.example.android.roomwordssample.Word("Hello");
+                Word word = new Word("Hello");
                 dao.insert(word);
-                word = new com.example.android.roomwordssample.Word("World");
+                word = new Word("World");
                 dao.insert(word);
             });
         }

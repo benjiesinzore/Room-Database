@@ -12,10 +12,10 @@ import java.util.List;
 public interface WordDao {
 
     @Query("SELECT * FROM word_table ORDER BY word ASC")
-    LiveData<List<com.example.android.roomwordssample.Word>> getAlphabetizedWords();
+    LiveData<List<Word>> getAlphabetizedWords();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    void insert(com.example.android.roomwordssample.Word word);
+    void insert(Word word);
 
     @Query("DELETE FROM word_table")
     void deleteAll();

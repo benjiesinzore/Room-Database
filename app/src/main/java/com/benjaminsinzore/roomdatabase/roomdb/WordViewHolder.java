@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.benjaminsinzore.roomdatabase.R;
+
 class WordViewHolder extends RecyclerView.ViewHolder {
     private final TextView wordItemView;
 

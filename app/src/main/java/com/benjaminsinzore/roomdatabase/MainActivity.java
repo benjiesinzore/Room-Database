@@ -9,6 +9,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.benjaminsinzore.roomdatabase.roomdb.Word;
+import com.benjaminsinzore.roomdatabase.roomdb.WordListAdapter;
+import com.benjaminsinzore.roomdatabase.roomdb.WordViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
