@@ -10,15 +10,15 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.benjaminsinzore.roomdatabase.roomdb.Word;
-import com.benjaminsinzore.roomdatabase.roomdb.WordListAdapter;
-import com.benjaminsinzore.roomdatabase.roomdb.WordViewModel;
+import com.benjaminsinzore.roomdatabase.roomdb.ListAdapter;
+import com.benjaminsinzore.roomdatabase.roomdb.ViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
 
-    private WordViewModel mWordViewModel;
+    private ViewModel mWordViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +26,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
-        final WordListAdapter adapter = new WordListAdapter(new WordListAdapter.WordDiff());
+        final ListAdapter adapter = new ListAdapter(new ListAdapter.WordDiff());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Get a new or existing ViewModel from the ViewModelProvider.
-        mWordViewModel = new ViewModelProvider(this).get(WordViewModel.class);
+        mWordViewModel = new ViewModelProvider(this).get(ViewModel.class);
 
         // Add an observer on the LiveData returned by getAlphabetizedWords.
         // The onChanged() method fires when the observed data changes and the activity is

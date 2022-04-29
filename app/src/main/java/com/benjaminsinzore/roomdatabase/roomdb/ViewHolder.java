@@ -11,10 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.benjaminsinzore.roomdatabase.R;
 
-class WordViewHolder extends RecyclerView.ViewHolder {
+class ViewHolder extends RecyclerView.ViewHolder {
     private final TextView wordItemView;
 
-    private WordViewHolder(View itemView) {
+    private ViewHolder(View itemView) {
         super(itemView);
         wordItemView = itemView.findViewById(R.id.textView);
     }
@@ -23,9 +23,9 @@ class WordViewHolder extends RecyclerView.ViewHolder {
         wordItemView.setText(text);
     }
 
-    static WordViewHolder create(ViewGroup parent) {
+    static ViewHolder create(ViewGroup parent) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.recyclerview_item, parent, false);
-        return new WordViewHolder(view);
+        return new ViewHolder(view);
     }
 }

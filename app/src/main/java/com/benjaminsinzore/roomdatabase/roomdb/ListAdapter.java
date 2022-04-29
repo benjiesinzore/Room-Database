@@ -4,22 +4,21 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
-import androidx.recyclerview.widget.ListAdapter;
 
 
-public class WordListAdapter extends ListAdapter<Word, WordViewHolder> {
+public class ListAdapter extends androidx.recyclerview.widget.ListAdapter<Word, ViewHolder> {
 
-    public WordListAdapter(@NonNull DiffUtil.ItemCallback<Word> diffCallback) {
+    public ListAdapter(@NonNull DiffUtil.ItemCallback<Word> diffCallback) {
         super(diffCallback);
     }
 
     @Override
-    public WordViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return WordViewHolder.create(parent);
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return ViewHolder.create(parent);
     }
 
     @Override
-    public void onBindViewHolder(WordViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
         Word current = getItem(position);
         holder.bind(current.getWord());
     }

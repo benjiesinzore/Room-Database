@@ -8,8 +8,8 @@ import androidx.room.Query;
 
 import java.util.List;
 
-@Dao
-public interface WordDao {
+@androidx.room.Dao
+public interface Dao {
 
     @Query("SELECT * FROM word_table ORDER BY word ASC")
     LiveData<List<Word>> getAlphabetizedWords();

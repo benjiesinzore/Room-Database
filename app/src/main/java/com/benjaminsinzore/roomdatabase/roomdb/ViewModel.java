@@ -8,16 +8,16 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 
-public class WordViewModel extends AndroidViewModel {
+public class ViewModel extends AndroidViewModel {
 
-    private WordRepository mRepository;
+    private Repository mRepository;
 
 
     private final LiveData<List<Word>> mAllWords;
 
-    public WordViewModel(Application application) {
+    public ViewModel(Application application) {
         super(application);
-        mRepository = new WordRepository(application);
+        mRepository = new Repository(application);
         mAllWords = mRepository.getAllWords();
     }
 
