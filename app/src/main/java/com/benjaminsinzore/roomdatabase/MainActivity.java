@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(
                     getApplicationContext(),
-                    R.string.empty_not_saved,
+                    "empty_not_saved",
                     Toast.LENGTH_LONG).show();
         }
     }

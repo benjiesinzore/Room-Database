@@ -45,10 +45,10 @@ abstract class RoomDatabase extends androidx.room.RoomDatabase {
                 Dao dao = INSTANCE.wordDao();
                 dao.deleteAll();
 
-                Word word = new Word("Hello");
-                dao.insert(word);
-                word = new Word("World");
-                dao.insert(word);
+//                Word word = new Word("Hello");
+//                dao.insert(word);
+//                word = new Word("World");
+//                dao.insert(word);
             });
         }
     };
