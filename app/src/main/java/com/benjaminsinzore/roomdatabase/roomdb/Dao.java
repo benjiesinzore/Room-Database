@@ -11,7 +11,7 @@ import java.util.List;
 @androidx.room.Dao
 public interface Dao {
 
-    @Query("SELECT * FROM word_table /*ORDER BY word ASC*/")
+    @Query("SELECT * FROM word_table ORDER BY word ASC")
     LiveData<List<Word>> getAlphabetizedWords();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)

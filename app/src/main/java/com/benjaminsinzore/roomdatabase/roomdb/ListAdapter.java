@@ -21,6 +21,7 @@ public class ListAdapter extends androidx.recyclerview.widget.ListAdapter<Word, 
     public void onBindViewHolder(ViewHolder holder, int position) {
         Word current = getItem(position);
         holder.bind(current.getWord());
+
     }
 
     public static class WordDiff extends DiffUtil.ItemCallback<Word> {

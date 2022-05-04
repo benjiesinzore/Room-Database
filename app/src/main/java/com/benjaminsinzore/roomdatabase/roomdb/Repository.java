@@ -27,4 +27,13 @@ class Repository {
             mDao.insert(word);
         });
     }
+
+    void deleteAll() {
+        RoomDatabase.databaseWriteExecutor.execute(() ->{
+            mDao.deleteAll();
+        });
+
+    }
+
+
 }
